@@ -10,7 +10,7 @@ def main() :
         start = arguments[1:]
 
     majuscule = numeric = minuscule = count = ponct = space = 0
-    ponctuation = string.punctuation
+    ponctuation = string.punctuation # string is allowed ?
     for i in start:
         for y in i:
             if y.isupper() :
