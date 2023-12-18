@@ -5,23 +5,19 @@ ft_dict = {"Hello" : "titi!"}
 
 #your code here
 
-#modifier
+#Modification par indice :
 ft_list[1] = "Word"
 
-#convertir en list
+#objet immuable => convertir en list
 ft_tuple = list(ft_tuple)
-#supprimer un element
 del ft_tuple[1]
-#rajouter un element
 ft_tuple.append("France")
 
-#supprimer
-ft_set.pop()
-#convertir en list
-# ft_set.remove()
-ft_set = list(ft_set)
-ft_set.insert(1, "Paris")
+#supprimer et ajouter
+ft_set.remove("Hello")
+ft_set.add("Paris")
 
+#Modification par clé :
 ft_dict["Hello"] = "42Paris"
 
 print(ft_list)

@@ -12,11 +12,14 @@ len = len(args)
 if len == 1:
     sys.exit(1)
 
-if len != 2:
-    print("AssertionError: more than one argument is provided")
-elif (args[1][0] == '-' and args[1][1:].isdigit() == True):
+if (args[1][0] == '-' and args[1][1:].isdigit() == True):
     odd_or_even(int(args[1]))
-elif (args[1].isdigit() == False) :
-    print("AssertionError: argument is not an integer")
 else:
-    odd_or_even(int(args[1]))
+
+    try:
+        assert args[1].isdigit() == True, "argument is not an integer"
+        assert len >= 2 , "more than one argument is provided"
+        odd_or_even(int(args[1]))
+
+    except AssertionError as e:
+        print("AssertionError:", e)

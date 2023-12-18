@@ -1,12 +1,20 @@
-import time
-import datetime
+#https://strftime.org/
 
+from datetime import datetime
+import time
+
+epoch_date = datetime.utcfromtimestamp(0).date()
+
+#need time module to have seconds
 seconds = time.time()
 
-ecriture_scientifique = "{:.2e}".format(seconds)
+#need to formate seconds
+seconds_with_comma = "{:,}".format(seconds)
+seconds_scientific = "{:.2e}".format(seconds)
 
-date_actuelle = datetime.datetime.now()
-format_date = date_actuelle.strftime("%b %d %Y")
+print("Seconds since", epoch_date.strftime("%B %-d, %Y:"), seconds_with_comma, "or", seconds_scientific)
 
-print(f"Seconds since January 1, 1970: {seconds} or {ecriture_scientifique} in scientific notation")
-print(f"{format_date}")
+now = datetime.now()
+new_now = datetime.utcnow().second
+
+print(now.strftime("%b %d %Y"))
